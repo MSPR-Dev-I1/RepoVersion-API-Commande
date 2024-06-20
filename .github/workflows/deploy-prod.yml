@@ -31,4 +31,4 @@ jobs:
           CONNECTION_NAME: ${{ secrets.CONNECTION_NAME }}
 
         run: |
-          gcloud run deploy api-commande --image europe-west9-docker.pkg.dev/$GOOGLE_PROJECT/api-client/image-api-client@sha256:0113f80a6bd3f85765636cb7624a4416715b172193f8869a5b8a6097983e798c --set-env-vars DATABASE_HOST=$DATABASE_HOST --set-env-vars DATABASE_USER=$DATABASE_USER --set-env-vars DATABASE_PASSWORD=$DATABASE_PASSWORD --set-env-vars INSTANCE_UNIX_SOCKET=$INSTANCE_UNIX_SOCKET --add-cloudsql-instances $CONNECTION_NAME  --region  europe-west9 --platform managed --allow-unauthenticated
+          gcloud run deploy api-commande --image europe-west9-docker.pkg.dev/$GOOGLE_PROJECT/api-commande/image-api-commande@sha256:0113f80a6bd3f85765636cb7624a4416715b172193f8869a5b8a6097983e798c --set-env-vars DATABASE_HOST=$DATABASE_HOST --set-env-vars DATABASE_USER=$DATABASE_USER --set-env-vars DATABASE_PASSWORD=$DATABASE_PASSWORD --set-env-vars INSTANCE_UNIX_SOCKET=$INSTANCE_UNIX_SOCKET --add-cloudsql-instances $CONNECTION_NAME  --region  europe-west9 --platform managed --allow-unauthenticated
